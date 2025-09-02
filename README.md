@@ -47,10 +47,28 @@ To follow along this project there are requirements need to be available on syst
   ```
 # *Project Flow*
 1. Create folder for Kubernetes
-2. Start minikube
-3. Add Helm Repository for Apache Airflow
-4. Create Namespace for Airflow
-5. Install Apache Airflow via Helm
+   ```bash
+   mkdir kubernetes/airflow
+   ```
+3. Start minikube
+   ```bash
+   # minikuce start
+   minikube start --driver=docker --memory=4g --cpus=2
+
+   # minikube checking
+   minikube status
+   ```
+4. Add Helm Repository for Apache Airflow
+   ```bash
+   # add helm repo
+   helm repo add apache-airflow https://airflow.apache.org
+   helm repo update
+   ```
+5. Create Namespace for Airflow
+   ```bash
+   kubectl create namespace airflow
+   ```
+6. Install Apache Airflow via Helm
    ```bash
    # install airflow through helm
    helm install airflow apache-airflow/airflow --namespace airflow \

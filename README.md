@@ -8,10 +8,21 @@ To follow along this project there are requirements need to be available on syst
   ```bash
   # install docker
   sudo apt install -y docker-ce docker-ce-cli containerd.io
+
   # check docker running
-  sudo systemctl status docker
+  docker --version
   ```
 - Minikube
+  ```bash
+  # download minikube
+  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+
+  # install minikube
+  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+  # checking minikube running
+  minikube version
+  ```
 - Kubectl
 - Vim (optional)
 # *Project Flow*

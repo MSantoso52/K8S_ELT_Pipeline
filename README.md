@@ -53,8 +53,28 @@ To follow along this project there are requirements need to be available on syst
 5. Install Apache Airflow via Helm
 6. Access Airflow UI and Configure Postgres Connection
 7. Create a Temporary Pod to Upload Files to the DAGs PVC
-8. Create the DAG File for the ELT Pipeline
-9. Test and Run the Pipeline
+   ```bash
+   # create temporary pod
+   vim uplaod-pod.yaml
+
+   # apply it
+   kubectl apply -f upload-pod.yaml
+
+   # upload JSON file
+   kubectl cp sales_record.json airflow/upload-pod:/dags/sales_record.json
+
+   # checking the result
+   kubectl exec -it upload-pod -n airflow -- ls /dags
+   ```
+9. Create the DAG File for the ELT Pipeline
+   ```bash
+   # create dag file
+   vim elt-dag.py
+
+   # Copy the DAG to the PVC
+   kubectl cp elt-dag.py airflow/upload-pod:/dags
+   ```
+10. Test and Run the Pipeline
     - Refresh the Airflow UI.
     - Trigger it manually (click Trigger DAG).
     - Monitor the run: Check logs for each task.

@@ -23,6 +23,14 @@ To follow along this project there are requirements need to be available on syst
   # checking minikube running
   minikube version
   ```
+- Helm
+  ```bash
+  # install helm
+  curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+
+  # checking helm running
+  helm version
+  ```
 - Kubectl
   ```bash
   # download the Google Cloud public signing key and add the Kubernetes apt repository to your system
@@ -38,3 +46,4 @@ To follow along this project there are requirements need to be available on syst
   sudo apt install vim
   ```
 # *Project Flow*
+1. 

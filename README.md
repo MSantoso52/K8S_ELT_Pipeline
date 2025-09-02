@@ -123,7 +123,7 @@ To follow along this project there are requirements need to be available on syst
     - Refresh the Airflow UI.
     - Trigger it manually (click Trigger DAG).
     - Monitor the run: Check logs for each task.
-      ![Screenshot of Project Flow](https://github.com/MSantoso52/K8S_ELT_Pipeline/blob/main/K8S_Airflow.png)
+     ![Screenshot of Project Flow](https://github.com/MSantoso52/K8S_ELT_Pipeline/blob/main/K8S_Airflow.png)
 11. Verify in Postgres
     ```bash
     # Port-forward Postgres

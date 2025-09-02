@@ -51,7 +51,20 @@ To follow along this project there are requirements need to be available on syst
 3. Add Helm Repository for Apache Airflow
 4. Create Namespace for Airflow
 5. Install Apache Airflow via Helm
-6. Access Airflow UI and Configure Postgres Connection
+   ```bash
+   # install airflow through helm
+   helm install airflow apache-airflow/airflow --namespace airflow \
+    --set executor=KubernetesExecutor \
+    --set dags.persistence.enabled=true \
+    --set logs.persistence.enabled=true \
+    --set images.airflow.repository=apache/airflow \
+    --set images.airflow.tag=2.10.0 \
+    --set extraPipPackages='{"pandas","psycopg2-binary"}'
+
+   # checking the result after wait for 5-10 minutes until ready 
+   kubectl get pods -n airflow
+   ```
+7. Access Airflow UI and Configure Postgres Connection
    ```bash
    # port forward webserver
    kubectl port-forward svc/airflow-api-server 8080:8080 -n airflow

@@ -55,7 +55,10 @@ To follow along this project there are requirements need to be available on syst
 7. Create a Temporary Pod to Upload Files to the DAGs PVC
 8. Create the DAG File for the ELT Pipeline
 9. Test and Run the Pipeline
-10. Verify in Postgres
+    - Refresh the Airflow UI.
+    - Trigger it manually (click Trigger DAG).
+    - Monitor the run: Check logs for each task.
+11. Verify in Postgres
     ```bash
     # Port-forward Postgres
     kubectl port-forward svc/airflow-postgresql 5432:5432 -n airflow
@@ -64,6 +67,4 @@ To follow along this project there are requirements need to be available on syst
     psql -h localhost -U postgres -d postgres
 
     # make query to check the result
-    SELECT order_id, item_name, price_per_unit, payment_method, status FROM clean_sales limit 5;
-    ```
-12. 
+    SELECT order_id, item_name, price_per_unit, payment_method, status FROM clean_sales limit 5; 

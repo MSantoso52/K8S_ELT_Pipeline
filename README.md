@@ -131,8 +131,10 @@ To follow along this project there are requirements need to be available on syst
 
     # Connect locally using psql
     psql -h localhost -U postgres -d postgres
+    ```
     ![Screenshot Schema](PostgreSQL Schema.png)
-
+    ```bash
     # make query to check the result
     SELECT order_id, item_name, price_per_unit, payment_method, status FROM clean_sales limit 5;
+    ```
     ![PostgreSQL Screenshot](PostgreSQL  Querying.png)

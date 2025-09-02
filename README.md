@@ -52,7 +52,21 @@ To follow along this project there are requirements need to be available on syst
 4. Create Namespace for Airflow
 5. Install Apache Airflow via Helm
 6. Access Airflow UI and Configure Postgres Connection
-7. Create a Temporary Pod to Upload Files to the DAGs PVC
+   ```bash
+   # port forward webserver
+   kubectl port-forward svc/airflow-api-server 8080:8080 -n airflow
+   ```
+   - Open http://localhost:8080 in your browser. Login with username admin and password admin (default; change it later via UI).
+   - Add a Postgres connection for our tasks
+     - Go to Admin > Connections > + (add new).
+     - Connection ID: postgres_default
+     - Connection Type: Postgres
+     - Host: airflow-postgresql (the service name of the deployed Postgres)
+     - Schema: postgres (default database)
+     - Login: postgres
+     - Password: postgres
+     - Test the connection (should succeed), then save.
+8. Create a Temporary Pod to Upload Files to the DAGs PVC
    ```bash
    # create temporary pod
    vim uplaod-pod.yaml

@@ -101,7 +101,7 @@ To follow along this project there are requirements need to be available on syst
 8. Create a Temporary Pod to Upload Files to the DAGs PVC
    ```bash
    # create temporary pod
-   vim uplaod-pod.yaml
+   vim upload-pod.yaml
 
    # apply it
    kubectl apply -f upload-pod.yaml

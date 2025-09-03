@@ -123,6 +123,7 @@ To follow along this project there are requirements need to be available on syst
     - Refresh the Airflow UI.
     - Trigger it manually (click Trigger DAG).
     - Monitor the run: Check logs for each task.
+     ![Screenshot of Project Flow](https://github.com/MSantoso52/K8S_ELT_Pipeline/blob/main/K8S_Airflow.png)
 11. Verify in Postgres
     ```bash
     # Port-forward Postgres
@@ -130,6 +131,10 @@ To follow along this project there are requirements need to be available on syst
 
     # Connect locally using psql
     psql -h localhost -U postgres -d postgres
-
+    ```
+    ![Screenshot Schema](https://github.com/MSantoso52/K8S_ELT_Pipeline/blob/main/PostgreSQL%20Schema.png)
+    ```bash
     # make query to check the result
-    SELECT order_id, item_name, price_per_unit, payment_method, status FROM clean_sales limit 5; 
+    SELECT order_id, item_name, price_per_unit, payment_method, status FROM clean_sales limit 5;
+    ```
+    ![PostgreSQL Screenshot](https://github.com/MSantoso52/K8S_ELT_Pipeline/blob/main/PostgreSQL%20%20Querying.png)

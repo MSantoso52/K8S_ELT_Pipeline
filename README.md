@@ -77,7 +77,7 @@ To follow along this project there are requirements need to be available on syst
     --set dags.persistence.enabled=true \
     --set logs.persistence.enabled=true \
     --set images.airflow.repository=apache/airflow \
-    --set images.airflow.tag=3.6.0
+    --set images.airflow.tag=3.6.0 \
     --set extraPipPackages='{"pandas","psycopg2-binary"}'
 
    # checking the result after wait for 5-10 minutes until ready 
